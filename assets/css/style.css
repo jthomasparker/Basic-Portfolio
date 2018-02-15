@@ -160,11 +160,62 @@ article{
     margin-bottom: 40px;
 }
 
+/* contact form */
+input[type=text], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 5px 0 20px;
+    display: inline-block;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+input[type=text]:focus, textarea:focus{
+    outline-style:none;
+    box-shadow:none;
+    border: 1px solid #4aaaa5;
+}
+
+#message{
+    height: 200px; 
+}
+
+input[type=submit] {
+    width: 20%;
+    background-color: #4aaaa5;
+    color: #ffffff;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+    
+}
+
+#submitbtn{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16pt;
+}
+
+input[type=submit]:hover {
+    background-color: #2a7e7a;
+    
+}
+
+label{
+    
+    
+}
+
 /* specific formatting for profile pic within article */
 #profile-img{
     height: 163px;
     width: 124px; 
-    padding: 0 20px 5px 0; 
+    padding: 0 20px 0 0; 
 }
 /* end article
 ****************/
@@ -196,35 +247,54 @@ Can't seem to figure it out, will come back to it */
 .icon-container{
     width: 60px;
     height: 60px;
-    background: #ffffff;
-    position: relative;
+    position: relative;  
+    float: left;
+    
 }
-#icon-linkedin{
+.icon-spanner{
     height: 100%;
     width: 100%;
-    background-image: url("../images/linkedin-logo.png");
-    background-repeat: no-repeat;
     color: transparent;
     position: absolute;
-    margin: auto;
-    padding: 5px;
     top:0;
     z-index: 1;
-    
 }
+#icon-github{
+    background-image: url("../images/github-logo.png");
+    background-size: 100%;
+}
+#icon-linkedin{
+    background-image: url("../images/linkedin-logo.png");
+    background-size: 100%;   
+    margin: 0px 5px;
+}
+#icon-stackoverflow{
+    background-image: url("../images/stackoverflow-logo.png");
+    background-size: 100%
+}
+#icon-github:link,
+#icon-github:visitied,
 #icon-linkedin:link,
-#icon-linkedin:visited{
+#icon-linkedin:visited,
+#icon-stackoverflow:link,
+#icon-stackoverflow:visited{
     text-decoration: none;
-    
+}
+#icon-github:hover{
+    background-image: url("../images/github-alt1.png");
+    background-size: 100%; 
 }
 #icon-linkedin:hover{    
-    background-image: url("../images/linkedin-alt1.png");
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    
-    margin: auto;
+    background-image: url("../images/linkedin-spelled-out.png");
+    background-size: 100%;   
 }
+
+#icon-stackoverflow:hover{
+    background-image: url("../images/stackoverflow-spelled-out.png");
+    background-size: 100%;
+}
+
+
 
 /* end sidebar 
 ****************/
