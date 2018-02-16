@@ -107,10 +107,13 @@ nav{
 .link-spanner:visited{
     text-decoration: none;
 }
-.link-spanner:hover{
+.link-spanner:hover,
+.link-spanner:active,
+.link-spanner:focus{
     background-color: #4aaaa5;
     color: #ffffff
 }
+
 
 /* "About" link block */
 #about{
@@ -161,7 +164,7 @@ article{
 }
 
 /* contact form */
-input[type=text], textarea {
+input[type=text], input[type=email], textarea {
     width: 100%;
     padding: 12px 20px;
     margin: 5px 0 20px;
@@ -173,10 +176,17 @@ input[type=text], textarea {
     transition: 0.5s;
 }
 
-input[type=text]:focus, textarea:focus{
+input[type=text]:focus, input[type=email]:focus, textarea:focus{
     outline-style:none;
     box-shadow:none;
     border: 1px solid #4aaaa5;
+}
+
+input[type=email]:invalid{
+    outline-style:none;
+    box-shadow:none;
+    border: 1px solid red;
+    /*    background-color: red; */
 }
 
 #message{
@@ -208,7 +218,6 @@ input[type=submit]:hover {
 
 label{
     
-    
 }
 
 /* specific formatting for profile pic within article */
@@ -234,22 +243,40 @@ aside{
     padding: 20px;
 }
 
-/* specific formatting for icons */
+/* specific formatting for icons
+No longer necessary but leaving it here for reference */
 .icon-img{
     height:60px;
     width: 60px;
     padding: 5px;
     margin: auto;
+    background-size: 100%;  
+}
+    /* "content: url" Doesn't work with Edge - too bad because it's much easier to add this to img
+     than what I ended up doing to make the icons change on hover =( I may revisit.
+    content:  url("../images/linkedin-logo.png");
+
 }
 
-/* Just messing around with changing icons on hover.
-Can't seem to figure it out, will come back to it */
+.icon-img::before{
+    content: url("../images/linkedin-logo.png")
+}
+.icon-img:link
+.icon-img:visited{
+    text-decoration: none;
+    color: transparent;
+}
+.icon-img:hover{
+    content: url("../images/linkedin-spelled-out.png");
+}
+*/
+
+/* Changes the icons to alternate images on hover */
 .icon-container{
     width: 60px;
     height: 60px;
     position: relative;  
-    float: left;
-    
+    float: left; 
 }
 .icon-spanner{
     height: 100%;
@@ -266,14 +293,14 @@ Can't seem to figure it out, will come back to it */
 #icon-linkedin{
     background-image: url("../images/linkedin-logo.png");
     background-size: 100%;   
-    margin: 0px 5px;
+    margin: 0px 15px 20px;
 }
 #icon-stackoverflow{
     background-image: url("../images/stackoverflow-logo.png");
     background-size: 100%
 }
 #icon-github:link,
-#icon-github:visitied,
+#icon-github:visited,
 #icon-linkedin:link,
 #icon-linkedin:visited,
 #icon-stackoverflow:link,
@@ -293,7 +320,6 @@ Can't seem to figure it out, will come back to it */
     background-image: url("../images/stackoverflow-spelled-out.png");
     background-size: 100%;
 }
-
 
 
 /* end sidebar 
@@ -325,7 +351,8 @@ footer{
 formatting */
 h1, h2, h3{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #4aaaa5;    
+    color: #4aaaa5;
+    font-weight: bold;   
 }
 
 h1{
@@ -342,8 +369,6 @@ h3{
 
 p{
     line-height: 200%;
-    /*text-indent: 10%; 
-        ^^^^^leaving out because it's not indented in the exaxmple*/
     padding-bottom: 20px;
 }
 
