@@ -1,5 +1,7 @@
 /***** TO DO: LOOK FOR REDUNDANCIES AND SIMPLIFY IF POSSIBLE *****/
 
+/* Comments for days! Future Josh is going to appreciate this! */
+
 /*********************
  html & body formatting. 
 height, overflow, padding, margin help with sticky footer */
@@ -61,8 +63,7 @@ header{
 .header-content-container{
     width: 960px;
     margin: auto;
-    height: 100%;
-       
+    height: 100%;     
 }
 
 /* sets styling/position of my name */
@@ -117,24 +118,50 @@ nav{
 
 /* "About" link block */
 #about{
-    right: 200px;
-    border-right-style: solid;
-    border-right-color: #cccccc;
-    border-right-width: thin;   
+    right: 200px; 
+    box-sizing: border-box
 }
 
 /* "Portfolio" link block */
 #portfolio{
     right: 100px;
-    border-right-style: solid;
-    border-right-color: #cccccc;
-    border-right-width: thin;
+    box-sizing: border-box
 }
 
 /* "Contact" link block */
 #contact{
     right: 0px;
+    box-sizing: border-box
 }
+
+/* Creates a border around the link blocks when viewing it's page */
+#about-active{
+    right: 200px; 
+    border-right-style: solid;
+    border-left-style: solid;
+    border-width: 0 thin;
+    border-color: #cccccc;
+    box-sizing: border-box
+}
+
+#portfolio-active{
+    right: 100px; 
+    border-right-style: solid;
+    border-left-style: solid;
+    border-width: 0 thin;
+    border-color: #cccccc;
+    box-sizing: border-box
+}
+
+#contact-active{
+    right: 0px; 
+    border-right-style: solid;
+    border-left-style: solid;
+    border-width: 0 thin;
+    border-color: #cccccc;
+    box-sizing: border-box
+}
+
 /* end navigation 
 ********************/
 
@@ -154,16 +181,24 @@ section{
 total width: 650px */
 article{
     float: left;
-    width: 610px;
+    width: 600px;
     background: #ffffff;
-    padding: 20px;
+    padding: 25px;
     border-style: solid;
     border-color: #dddddd; 
     border-width: thin;
     margin-bottom: 40px;
 }
 
+/* specific formatting for profile pic within article */
+#profile-img{
+    height: 163px;
+    width: 124px; 
+    padding: 0 20px 0 0; 
+}
+
 /* contact form */
+/* input formatting */
 input[type=text], input[type=email], textarea {
     width: 100%;
     padding: 12px 20px;
@@ -176,23 +211,25 @@ input[type=text], input[type=email], textarea {
     transition: 0.5s;
 }
 
+/* changes border to teal on focus. outline-style/box-shadow necessary for Chrome */
 input[type=text]:focus, input[type=email]:focus, textarea:focus{
     outline-style:none;
     box-shadow:none;
     border: 1px solid #4aaaa5;
 }
 
+/* Changes border to red if not a valid email */
 input[type=email]:invalid{
     outline-style:none;
     box-shadow:none;
     border: 1px solid red;
-    /*    background-color: red; */
 }
 
-#message{
+textarea{
     height: 200px; 
 }
 
+/* submit button formatting */
 input[type=submit] {
     width: 20%;
     background-color: #4aaaa5;
@@ -201,9 +238,7 @@ input[type=submit] {
     margin: 5px 0;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
-    
-    
+    cursor: pointer;   
 }
 
 #submitbtn{
@@ -213,18 +248,82 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: #2a7e7a;
+}
+
+/* label formatting not necessary at this point 
+label{}
+*/
+
+
+/* portfolio page */
+.portfolio-img-container{
+    float: left;
+    height: 175px;
+    width: 45%;
+    box-sizing: border-box;
+    position: relative;
+  /*  filter: grayscale(50%);
+       */
+}
+
+.portfolio-img-container:hover{
+    filter: brightness(75%);
     
 }
 
-label{
+.portfolio-label{
+    background-color: #4aaaa5;
+    color: #ffffff;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    font-size: 16pt;
+    box-sizing: border-box;
+}
+
+#img-hangman{
+    background-image: url("../images/hangman-image.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center; 
+    margin-right: 10%;
+    margin-bottom: 40px;
+}
+
+#img-rpg{
+    background: url("../images/rpg-image.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center; 
     
 }
 
-/* specific formatting for profile pic within article */
-#profile-img{
-    height: 163px;
-    width: 124px; 
-    padding: 0 20px 0 0; 
+#img-trivia{
+    background: url("../images/trivia-image.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    margin-right: 10%;
+    margin-bottom: 40px;
+    
+}
+
+#img-rutgers{
+    background: url("../images/rutgers-img.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center; 
+    margin-bottom: 40px;
+    
+}
+
+#img-rps{
+    background: url("../images/rps-image.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center; 
 }
 /* end article
 ****************/
@@ -271,7 +370,7 @@ No longer necessary but leaving it here for reference */
 }
 */
 
-/* Changes the icons to alternate images on hover */
+/* icon formatting */
 .icon-container{
     width: 60px;
     height: 60px;
@@ -299,6 +398,8 @@ No longer necessary but leaving it here for reference */
     background-image: url("../images/stackoverflow-logo.png");
     background-size: 100%
 }
+
+/* changes icons to alternates on hover */
 #icon-github:link,
 #icon-github:visited,
 #icon-linkedin:link,
@@ -372,7 +473,7 @@ p{
     padding-bottom: 20px;
 }
 
-/* divider lines, may want to a specific one for the sidebar */
+/* divider lines, may want to make specific one for the sidebar */
 hr{
     color: #cccccc;
     background-color: #cccccc;
