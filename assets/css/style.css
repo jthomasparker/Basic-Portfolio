@@ -250,10 +250,6 @@ input[type=submit]:hover {
     background-color: #2a7e7a;
 }
 
-/* label formatting not necessary at this point 
-label{}
-*/
-
 
 /* portfolio page */
 .portfolio-img-container{
@@ -262,13 +258,10 @@ label{}
     width: 45%;
     box-sizing: border-box;
     position: relative;
-  /*  filter: grayscale(50%);
-       */
 }
 
 .portfolio-img-container:hover{
-    filter: brightness(75%);
-    
+    filter: brightness(75%); 
 }
 
 .portfolio-label{
@@ -281,6 +274,7 @@ label{}
     text-align: center;
     font-size: 16pt;
     box-sizing: border-box;
+    line-height: 200%;
 }
 
 #img-hangman{
@@ -343,15 +337,9 @@ aside{
 }
 
 /* specific formatting for icons
-No longer necessary but leaving it here for reference */
-.icon-img{
-    height:60px;
-    width: 60px;
-    padding: 5px;
-    margin: auto;
-    background-size: 100%;  
-}
-    /* "content: url" Doesn't work with Edge - too bad because it's much easier to add this to img
+
+    
+/* "content: url" Doesn't work with Edge - too bad because it's much easier to add this to img
      than what I ended up doing to make the icons change on hover =( I may revisit.
     content:  url("../images/linkedin-logo.png");
 
